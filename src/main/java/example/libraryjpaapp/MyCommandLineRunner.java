@@ -20,10 +20,15 @@ public class MyCommandLineRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Details details = new Details("wassim@gmail.com", "Wassim", LocalDate.of(1977,1,1));
-        detailsDao.create(details);
-        AppUser appUser = new AppUser("wassim1977", "haroon2008",details);
-        appUserDao.create(appUser);
+        Details wassimDetails = new Details("wassim@gmail.com", "Wassim", LocalDate.of(1977,1,1));
+        detailsDao.create(wassimDetails);
+        AppUser wassim = new AppUser("wassim1977", "haroon2008",wassimDetails);
+        appUserDao.create(wassim);
+
+        Details aliDetails = new Details("ali@gmail.com", "Ali", LocalDate.of(2000,1,1));
+        detailsDao.create(aliDetails);
+        AppUser ali = new AppUser("ali2000", "@Li2022",aliDetails);
+        appUserDao.create(ali);
 
     }
 }
